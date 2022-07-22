@@ -11,11 +11,19 @@ class DeviceController {
             let filename = uuid.v4() + ".jpg"
             img.mv(path.resolve(__dirname, '..', 'static', filename))
 
+            const device = await Device.create({name, price, brandId, typeId, img: filename})
+
             if (info) {
                 info = JSON.parse(info)
+                info.forEach(i => {
+                    DeviceInfo.create({
+                        title: i.title,
+                        description: i.description,
+                        deviceId: device.id
+                    })
+                })
             }
 
-            const device = await Device.create({name, price, brandId, typeId, img: filename})
             return res.json(device)
         } catch (e) {
             next(ApiError.badRequest(e.message))
@@ -47,7 +55,14 @@ class DeviceController {
     }
 
     async getOne(req, res) {
-
+        const {id} = req.params
+        const device = await Device.findOne(
+            {
+                where: {id},
+                include: [{model: DeviceInfo, as: 'info'}]
+            }
+        )
+        return res.json(device)
     }
 }
 
