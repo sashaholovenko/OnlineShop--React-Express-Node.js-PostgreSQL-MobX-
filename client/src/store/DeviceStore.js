@@ -31,13 +31,6 @@ export default class DeviceStore {
         this._user = user
     }
 
-    get isAuth() {
-        return this._isAuth
-    }
-
-    get user() {
-        return this._user
-    }
     get types() {
         return this._types
     }
