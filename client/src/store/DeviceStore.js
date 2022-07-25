@@ -4,7 +4,11 @@ export default class DeviceStore {
     constructor() {
         this._types = [
             {id: 1, name: "Fridges"},
-            {id: 2, name: "Smartphones"}
+            {id: 2, name: "Smartphones"},
+            {id: 3, name: "Laptops"},
+            {id: 4, name: "PCs"},
+            {id: 5, name: "Headphones"},
+
         ]
         this._brands = [
             {id: 1, name: "Samsung"},
@@ -16,6 +20,7 @@ export default class DeviceStore {
             {id: 3, name: "Samsung S9", price: 22500, rating: 3, img: "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png/revision/latest/scale-to-width-down/1000?cb=20220214112531"},
             {id: 4, name: "Google Pixel 3", price: 24500, rating: 2, img: "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png/revision/latest/scale-to-width-down/1000?cb=20220214112531"},
         ]
+        this._selectedType = {}
         makeAutoObservable(this)
     }
     setTypes(types) {
@@ -27,8 +32,9 @@ export default class DeviceStore {
     setDevices(devices) {
         this._devices = devices
     }
-    setUser(user) {
-        this._user = user
+
+    setSelectedType(type){
+        this._selectedType = type
     }
 
     get types() {
@@ -39,6 +45,9 @@ export default class DeviceStore {
     }
     get devices() {
         return this._devices
+    }
+    get selectedType() {
+        return this._selectedType
     }
 
 }
