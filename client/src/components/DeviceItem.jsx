@@ -4,7 +4,6 @@ import star from '../assets/Star.png'
 import {useHistory} from "react-router-dom";
 import {DEVICE_ROUTE} from "../utils/consts";
 const DeviceItem = ({device}) => {
-
     const history = useHistory()
 
     return (

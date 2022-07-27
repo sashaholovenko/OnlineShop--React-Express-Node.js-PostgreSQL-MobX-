@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
-import {ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {NavLink} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {useHistory} from 'react-router-dom'
@@ -31,7 +31,9 @@ const NavBar = observer(() => {
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: 'white'}}>
-                        <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Authorization</Button>
+                        <Button
+                            variant={"outline-light"}
+                            onClick={() => user.setIsAuth(true)}>Authorization</Button>
                     </Nav>
                 }
             </Container>
