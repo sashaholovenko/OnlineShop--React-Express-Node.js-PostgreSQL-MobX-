@@ -9,7 +9,7 @@ import {useHistory} from 'react-router-dom'
 const NavBar = observer(() => {
     const {user} = useContext(Context)
     const history = useHistory()
-    const test = true
+    // const test = true
 
     return (
         <Navbar bg="dark" variant="dark">
