@@ -10,7 +10,7 @@ const DeviceItem = ({device}) => {
         <Col md={3} className="mt-3" onClick={() => history.push(DEVICE_ROUTE + '/' + device.id)}>
             <Card style={{width: 150, cursor: "pointer"}} border={"light"}>
                 <Image
-                    src={device.img}
+                    src={'http://localhost:5000/' + device.img}
                     width={150}
                     height={150}
                 />

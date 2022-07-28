@@ -3,5 +3,6 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/server" libraries="{OnlineShop--React-Express-Node.js-PostgreSQL-MobX-/server/node_modules}" />
     <file url="PROJECT" libraries="{@types/sequelize, OnlineShop--React-Express-Node.js-PostgreSQL-MobX-/server/node_modules}" />
+    <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>
