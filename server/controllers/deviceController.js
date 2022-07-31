@@ -34,7 +34,7 @@ class DeviceController {
         let  {brandId, typeId, limit, page} = req.query
 
         page = page || 1;
-        limit = limit || 9;
+        limit = limit || 12;
         let offset = page * limit - limit
 
         let devices;
