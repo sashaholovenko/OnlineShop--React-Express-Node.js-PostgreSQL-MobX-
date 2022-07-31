@@ -24,9 +24,12 @@ export default class DeviceStore {
 
     setSelectedType(type){
         this._selectedType = type
+        this.setPage(1)
+
     }
     setSelectedBrand(brand){
         this._selectedBrand = brand
+        this.setPage(1)
     }
 
     setPage(page) {
